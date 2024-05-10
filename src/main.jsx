@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-
+import Home from './components/Home.jsx'
+import Accessories from './components/Accessories.jsx'
+import Computing from './components/Computing.jsx'
+import Mobile from './components/Mobile.jsx'
+import HomeApplieances from './components/HomeApplience.jsx'
+import Shop from './components/Shop.jsx'
+import Tv from './components/Tv.jsx'
+import Display from './components/Display.jsx'
 
 const router=createBrowserRouter([
   {
@@ -27,7 +34,7 @@ const router=createBrowserRouter([
   }
   ,{
     path:'homeAppliances',
-    element:<HoneApplieances/>
+    element:<HomeApplieances/>
   }
   ,{
     path:'computing',
@@ -40,6 +47,10 @@ const router=createBrowserRouter([
   ,{
     path:'accessories',
     element:<Accessories/>
+  }
+  ,{
+    path:'display',
+    element:<Display/>
   }
 ]
   }
