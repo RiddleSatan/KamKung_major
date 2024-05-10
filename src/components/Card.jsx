@@ -3,6 +3,7 @@ import React from "react";
 const card = () => {
   return (
     <>
+
       <div className="w-60 border-[1px]   min-h-80 bg-[#f4f4f4] rounded-md p-2">
         <div className="overflow-hidden">
           <img
@@ -28,4 +29,4 @@ const card = () => {
 
 export default card;
 
-// #f4f4f4
+
