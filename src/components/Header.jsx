@@ -61,31 +61,30 @@ const Header = () => {
           >
             Accessories
           </NavLink>
-         
         </div>
-        <div className="w-fit flex gap-3 my-auto mr-16" >
-            <NavLink
-              className="px-2 py-2 rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white "
-              to="Accessories"
-            >
-              Support
-            </NavLink>
-            <NavLink
-              className="px-2 py-2 rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white "
-              to="Accessories"
-            >
-              For Business
-            </NavLink>
-            <NavLink className="my-auto font-bold text-3xl" to="">
-              <CiSearch />  
-            </NavLink>
-            <NavLink className="my-auto font-light text-3xl" to="">
-              <CiShoppingCart />
-            </NavLink>
+        <div className="w-fit flex gap-3 my-auto mr-16">
+          <NavLink
+            className="px-2 py-2 rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white "
+            to="Accessories"
+          >
+            Support
+          </NavLink>
+          <NavLink
+            className="px-2 py-2 rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white "
+            to="Accessories"
+          >
+            For Business
+          </NavLink>
+          <NavLink className="my-auto font-bold text-3xl" to="">
+            <CiSearch />
+          </NavLink>
+          <NavLink className="my-auto font-light text-3xl" to="">
+            <CiShoppingCart />
+          </NavLink>
 
-            <NavLink className="my-auto font-light text-3xl" to="">
-              <CiUser />
-            </NavLink>
+          <NavLink className="my-auto font-light text-3xl" to="">
+            <CiUser />
+          </NavLink>
         </div>
       </div>
     </>
