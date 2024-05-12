@@ -4,9 +4,9 @@ const SignUp = () => {
   return (
     <div className="w-full h-screen pl-5 flex my-4">
       <div className="left w-[35vw] min-h-[30vh]  flex flex-col items-center justify-between py-14">
-      <h1 className="font-medium tracking-tighter text-2xl">Login</h1>
-      <h1 className="font-medium  text-lg">Login with email to become a member</h1>
-      <div className="h-auto w-fit ">
+      <h1 className="font-medium tracking-tighter text-2xl">Sing Up</h1>
+      <h1 className="font-medium  text-lg">SignUp with email to become a member</h1>
+      <div className="h-auto w-fit">
         <form  action="/signup" method="post">
           <label htmlFor="">Email:</label>
           <input className="block px-10 items-center rounded-lg py-2  mb-4 outline-none border-b-[1px] border-black" type="email" name="email" placeholder="Enter your Email" />

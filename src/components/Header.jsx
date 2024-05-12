@@ -85,6 +85,7 @@ const Header = () => {
           <NavLink className="my-auto font-light text-3xl" to="">
             <CiUser />
           </NavLink>
+          
         </div>
       </div>
     </>

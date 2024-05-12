@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import Layout from "./Layout.jsx";
 import "./index.css";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Accessories from "./components/Accessories.jsx";
 import Computing from "./components/Computing.jsx";
@@ -15,12 +11,13 @@ import HomeApplience from "./components/HomeApplience.jsx";
 import Shop from "./components/Shop.jsx";
 import Tv from "./components/Tv.jsx";
 import Display from "./components/Display.jsx";
-import Card from "./components/Card.jsx";
+import SignUp from "./components/SignUp.jsx";
+import Login from "./components/Login.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
     children: [
       {
         path: "",
@@ -57,6 +54,14 @@ const router = createBrowserRouter([
       {
         path: "display",
         element: <Display />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
       },
     ],
   },
