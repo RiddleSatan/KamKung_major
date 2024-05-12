@@ -11,7 +11,7 @@ function Layout() {
   const [data, setData] = useState([]);
   function fetchData() {
     axios
-      .get("/data")
+      .get("http://localhost:3000/data")
       .then((res) => {
         console.log(res.data)
         setData(res.data);
@@ -28,8 +28,8 @@ function Layout() {
   return (
     <>
       <Header />
-      {/* {data ? data : <h1>Something is damn wrong</h1>} */}
-      {/* <Outlet /> */}
+      {/* {data ? data : <h1>Something is damn wrong</h1>}  */}
+       <Outlet />
       <Login/>
       <Footer />
     </>
