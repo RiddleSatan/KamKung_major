@@ -66,26 +66,26 @@ const Home = () => {
           Buy now
         </NavLink>
       </div>
-      <div className="  rounded-2xl  bg-red-700 overflow-hidden flex">
-        <div className="overflow-hidden  w-50% ">
+      <div className="  rounded-2xl h-[99vh]overflow-hidden flex">
+        <div className="overflow-hidden rounded-xl  ml-20 w-50% ">
           <img
             src="https://images.samsung.com/is/image/samsung/assets/in/home/0426/home_page_bigtile-sqaure_pc.jpg?$684_684_JPG$"
             alt=""
           />
         </div>
-        <div className="w-[48%]  flex flex-wrap gap-2 items-center justify-center overflow-hidden mx-auto">
-          <div className="w-[48%]  bg-cyan-400 overflow-hidden ">
+        <div className="w-[48%]  flex flex-wrap justify-evenly   overflow-hidden mx-auto">
+          <div className="w-[42%] rounded-xl h-[48%]  bg-cyan-400 mb-5 overflow-hidden ">
             <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
           </div>
-          <div className="w-[48%]  bg-cyan-400 overflow-hidden">
-            <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
-          </div>
-
-          <div className="w-[48%]  bg-cyan-400 overflow-hidden">
+          <div className="w-[42%] rounded-xl h-[48%] bg-cyan-400  overflow-hidden">
             <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
           </div>
 
-          <div className="w-[48%]  bg-cyan-400 overflow-hidden">
+          <div className="w-[42%] rounded-xl h-[48%] bg-cyan-400 overflow-hidden">
+            <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
+          </div>
+
+          <div className="w-[42%] rounded-xl h-[48%] bg-cyan-400  overflow-hidden">
             <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
           </div>
         </div>
