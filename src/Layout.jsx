@@ -30,7 +30,7 @@ function Layout() {
       <Header />
       {/* {data ? data : <h1>Something is damn wrong</h1>}  */}
        <Outlet />
-      <Login/>
+     
       <Footer />
     </>
   );
