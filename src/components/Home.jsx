@@ -67,26 +67,26 @@ const Home = () => {
         </NavLink>
       </div>
       <div className="  rounded-2xl h-[99vh]overflow-hidden flex">
-        <div className="overflow-hidden rounded-xl  ml-20 w-50% ">
-          <img
+        <div className="overflow-hidden     rounded-xl  ml-20 w-50% ">
+          <img className="hover:scale-125 transition-all"
             src="https://images.samsung.com/is/image/samsung/assets/in/home/0426/home_page_bigtile-sqaure_pc.jpg?$684_684_JPG$"
             alt=""
           />
         </div>
         <div className="w-[48%]  flex flex-wrap justify-evenly   overflow-hidden mx-auto">
           <div className="w-[42%] rounded-xl h-[48%]  bg-cyan-400 mb-5 overflow-hidden ">
-            <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
+            <img className="object-cover hover:scale-125 transition-all   w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/F55_330X330.jpg?$330_330_JPG$" alt="" />
           </div>
           <div className="w-[42%] rounded-xl h-[48%] bg-cyan-400  overflow-hidden">
-            <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
+            <img className="object-cover hover:scale-125 transition-all   w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/Small-Tile_330x330-NP750XGJ-KG1IN.jpg?$330_330_JPG$" alt="" />
           </div>
 
           <div className="w-[42%] rounded-xl h-[48%] bg-cyan-400 overflow-hidden">
-            <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
+            <img className="object-cover hover:scale-125 transition-all   w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
           </div>
 
           <div className="w-[42%] rounded-xl h-[48%] bg-cyan-400  overflow-hidden">
-            <img className="object-cover w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/RF65DB90BD12TL_Small_Tile_330x330.jpg?$330_330_JPG$" alt="" />
+            <img className="object-cover hover:scale-125 transition-all   w-full h-full" src="https://images.samsung.com/is/image/samsung/assets/in/home/Small-Tile_330x330_music_frame.jpg?$330_330_JPG$" alt="" />
           </div>
         </div>
       </div>
