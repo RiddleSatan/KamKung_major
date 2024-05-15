@@ -17,6 +17,10 @@ const SignUp = () => {
         username,
       });
       console.log(response.data);
+      setEmail('')
+      setPassword('')
+      setname('')
+      setUsername('')
     } catch (error) {
       console.error("Something went wrong", error);
       throw error;
