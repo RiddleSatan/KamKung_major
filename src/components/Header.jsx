@@ -63,12 +63,12 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="w-fit flex gap-3 my-auto mr-16">
-          <NavLink
+          {/* <NavLink
             className="px-2 py-2 rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white "
             to="Accessories"
           >
             Support
-          </NavLink>
+          </NavLink> */}
           <NavLink
             className="px-2 py-2 rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white "
             to="Accessories"
@@ -81,17 +81,20 @@ const Header = () => {
           <NavLink className="my-auto font-light text-3xl" to="">
             <CiShoppingCart />
           </NavLink>
-          <div className="my-auto mx-5 flex">
-          <NavLink   className="px-2   rounded-[20px] text-black  hover:bg-blue-600 transition-all hover:scale-110 hover:text-white "> 
-            Login
-          </NavLink >
-          <h1 className="my-auto mx-1">/</h1>
-          <NavLink  to='Signup' className="px-2   rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white ">
-            Sign-Up
-          </NavLink>
+          <div className="my-auto flex">
+            <NavLink className="px-2   rounded-[20px] text-black  hover:bg-blue-600 transition-all hover:scale-110 hover:text-white ">
+              Login
+            </NavLink>
+            <h1 className="my-auto mx-1">/</h1>
+            <NavLink
+              to="Signup"
+              className="px-2   rounded-[20px] text-black  hover:bg-black transition-all hover:scale-110 hover:text-white "
+            >
+              Sign-Up
+            </NavLink>
           </div>
 
-          <NavLink to='Profile' className="my-auto font-light text-3xl">
+          <NavLink to="Profile" className="my-auto font-light text-3xl">
             <CiUser />
           </NavLink>
         </div>
