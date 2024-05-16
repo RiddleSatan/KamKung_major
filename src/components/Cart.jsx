@@ -1,5 +1,5 @@
 import React from "react";
-import { MdAddShoppingCart } from "react-icons/md";
+import { IoIosRemoveCircle } from "react-icons/io";
 
 const Cart = () => {
   return (
@@ -28,8 +28,8 @@ const Cart = () => {
               </div>
               <div className="mx-auto flex flex-col justify-between ml-16">
                 <h1 className="mx-auto">$12.99</h1>
-                <button className="text-2xl mx-auto mb-1 text-white bg-zinc-700 px-2 py-1 rounded-md font-light hover:bg-white hover:text-black transition-all">
-                  <MdAddShoppingCart />
+                <button className="text-2xl mx-auto mb-1  text-red-600 rounded-md font-light hover:bg-white hover:text-red-800 transition-all">
+                  <IoIosRemoveCircle />
                 </button>
               </div>
             </div>

@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
+
+  const notify = (e) => {
+    if (e) {
+      toast.error(e);
+    } else {
+      toast.success("Your email has been registered");
+    }
+  };
 
   async function handlesubmit(e) {
     e.preventDefault();
@@ -16,13 +26,21 @@ const SignUp = () => {
         fullname,
         username,
       });
-      console.log(response.data);
+
+      setEmail("");
+      setPassword("");
+      setFullname("");
+      setUsername("");
+      notify(response.data.noti);
+      
     } catch (error) {
       console.error("Something went wrong", error);
       throw error;
     }
   }
 
+
+  // const notify = () => toast(response.data.noti);
   return (
     <div className="w-full h-screen pl-5 flex my-4">
       <div className="left w-[35vw] min-h-[30vh]  flex flex-col items-center justify-between py-14">
@@ -69,6 +87,7 @@ const SignUp = () => {
               <button
                 className="block w-[18vw] py-[0.35rem]  tracking-tighter rounded-3xl text-white bg-black"
                 type="submit"
+                onClick={(e) => handlesubmit(e)}
               >
                 Sign-Up
               </button>

@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 function Layout() {
   const [data, setData] = useState([]);
@@ -13,7 +14,7 @@ function Layout() {
     axios
       .get("http://localhost:3000/data")
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         setData(res.data);
       })
       .catch((err) => {
@@ -29,8 +30,21 @@ function Layout() {
     <>
       <Header />
       {/* {data ? data : <h1>Something is damn wrong</h1>}  */}
-       <Outlet />
-     
+      <Outlet />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition:Bounce
+      />
+
       <Footer />
     </>
   );
