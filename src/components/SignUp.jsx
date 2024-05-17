@@ -55,6 +55,7 @@ const SignUp = () => {
               className="block px-10 items-center rounded-lg py-2  mb-4 outline-none border-b-[1px] border-black"
               type="email"
               name="email"
+              value={email}
               placeholder="Enter your Email"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -63,6 +64,7 @@ const SignUp = () => {
               className="block px-10 items-center rounded-lg py-2  mb-4 outline-none border-b-[1px] border-black"
               type="password"
               name="password"
+              value={password}
               placeholder="Enter your password"
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -71,6 +73,7 @@ const SignUp = () => {
               className="block px-10 items-center rounded-lg py-2  mb-4 outline-none border-b-[1px] border-black"
               type="text"
               name="fullname"
+              value={fullname}
               placeholder="Enter your full Name"
               onChange={(e) => setFullname(e.target.value)}
             />
@@ -79,6 +82,7 @@ const SignUp = () => {
               className="block px-10 items-center rounded-lg py-2  mb-4 outline-none border-b-[1px] border-black"
               type="text"
               name="username"
+              value={username}
               placeholder="Enter username"
               onChange={(e) => setUsername(e.target.value)}
             />
