@@ -82,7 +82,7 @@ const Header = () => {
             <CiShoppingCart />
           </NavLink>
           <div className="my-auto flex">
-            <NavLink className="px-2   rounded-[20px] text-black  hover:bg-blue-600 transition-all hover:scale-110 hover:text-white ">
+            <NavLink to='Login' className="px-2   rounded-[20px] text-black  hover:bg-blue-600 transition-all hover:scale-110 hover:text-white ">
               Login
             </NavLink>
             <h1 className="my-auto mx-1">/</h1>
