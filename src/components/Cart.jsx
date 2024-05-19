@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosRemoveCircle } from "react-icons/io";
 
+
 const Cart = () => {
   return (
     <>
