@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+
+  const navigate=useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
@@ -31,7 +34,9 @@ const SignUp = () => {
       setPassword("");
       setFullname("");
       setUsername("");
+      // console.log(response.data.login)
       notify(response.data.noti);
+      navigate(`/profile/${response.data.id}`)
       
     } catch (error) {
       console.error("Something went wrong", error);
