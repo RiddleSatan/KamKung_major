@@ -107,6 +107,53 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* --------------------MobileSection ----------------------------*/}
+      <h1 className="text-4xl font-medium w-fit mx-auto tracking-tighter mt-8 mb-2">
+        Mobile
+      </h1>
+      <div className=" flex justify-center">
+        <NavLink
+          className="px-6 py-[0.60rem] rounded-[20px]   inline-block  text-lg font-medium  transition-all hover:text-gray-700 active:underline "
+          to=""
+        >
+          New In
+        </NavLink>
+        <NavLink
+          className="px-6 py-[0.60rem] rounded-[20px]   inline-block  text-lg font-medium  transition-all hover:text-gray-700 active:underline "
+          to=""
+        >
+          Mobile
+        </NavLink>
+        <NavLink
+          className="px-6 py-[0.60rem] rounded-[20px]   inline-block  text-lg font-medium  transition-all hover:text-gray-700 active:underline "
+          to=""
+        >
+          TV
+        </NavLink>
+        <NavLink
+          className="px-6 py-[0.60rem] rounded-[20px]   inline-block  text-lg font-medium  transition-all hover:text-gray-700 active:underline "
+          to=""
+        >
+          Appliances
+        </NavLink>
+        <NavLink
+          className="px-6 py-[0.60rem] rounded-[20px]   inline-block  text-lg font-medium  transition-all hover:text-gray-700 active:underline "
+          to=""
+        >
+          Galaxy Ecosystem
+        </NavLink>
+        <NavLink
+          className="px-6 py-[0.60rem] rounded-[20px]   inline-block  text-lg font-medium  transition-all hover:text-gray-700 active:underline "
+          to=""
+        >
+          Buy now
+        </NavLink>
+      </div>
+      <div className="w-[95vw]  mx-auto bg-[#f4f4f4] overflow-hidden">
+           <img className="w-full h-full object-cover" src="" alt="" />
+      </div>
+      
+
     </div>
   );
 };
