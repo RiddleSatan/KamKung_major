@@ -12,8 +12,9 @@ async function handleSubmit(e){
 	e.preventDefault()
     try {
 		const response= await axios.post(`http://localhost:3000/login`,{email,password})
+		console.log(response.data.id)
 		if(response){
-			navigate('/')
+			navigate('/',{state:{userId:response.data.id}})
 			
 		}
 	} catch (error) {

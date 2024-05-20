@@ -1,11 +1,21 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,useLocation, useNavigate } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 
 import { CiUser } from "react-icons/ci";
 
 const Header = () => {
+const location=useLocation()
+const navigate=useNavigate()
+
+const handleProfile=()=>{
+  const userId=location.state?.userId
+  console.log(userId)
+  if(userId){
+    navigate(`/profile/${userId}`)
+  }
+}
   return (
     <>
       <div className="w-full h-20 flex justify-between pl-8 ">
@@ -94,8 +104,8 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <NavLink to="profile" className="my-auto font-light text-3xl">
-            <CiUser />
+          <NavLink onClick={handleProfile} className="my-auto font-light text-3xl">
+            <  CiUser />
           </NavLink>
         </div>
       </div>
