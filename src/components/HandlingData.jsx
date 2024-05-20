@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card.jsx";
-import useFetchData from "./Custom/useFetchData.js";
+import useFetchData from "./Hooks/useFetchData.js";
 
 const HandlingData = () => {
     

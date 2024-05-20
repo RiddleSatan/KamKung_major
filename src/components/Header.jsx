@@ -94,7 +94,7 @@ const Header = () => {
             </NavLink>
           </div>
 
-          <NavLink to="Profile" className="my-auto font-light text-3xl">
+          <NavLink to="profile" className="my-auto font-light text-3xl">
             <CiUser />
           </NavLink>
         </div>
