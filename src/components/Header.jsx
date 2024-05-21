@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { useState } from "react";
@@ -8,10 +8,9 @@ import { CiUser } from "react-icons/ci";
 
 const Header = () => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [userId, setUserId] = useState(null);
-
+console.log(location.state?.userId)
   useEffect(() => {
     if (location.state?.userId) {
       setUserId(location.state?.userId);
