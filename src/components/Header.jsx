@@ -1,21 +1,24 @@
-import React from "react";
-import { NavLink,useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
+import { useState } from "react";
 
 import { CiUser } from "react-icons/ci";
 
 const Header = () => {
-const location=useLocation()
-const navigate=useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
 
-const handleProfile=()=>{
-  const userId=location.state?.userId
-  console.log(userId)
-  if(userId){
-    navigate(`/profile/${userId}`)
-  }
-}
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    if (location.state?.userId) {
+      setUserId(location.state?.userId);
+      console.log(userId);
+    }
+  }, []);
+
   return (
     <>
       <div className="w-full h-20 flex justify-between pl-8 ">
@@ -92,7 +95,10 @@ const handleProfile=()=>{
             <CiShoppingCart />
           </NavLink>
           <div className="my-auto flex">
-            <NavLink to='Login' className="px-2   rounded-[20px] text-black  hover:bg-blue-600 transition-all hover:scale-110 hover:text-white ">
+            <NavLink
+              to="Login"
+              className="px-2   rounded-[20px] text-black  hover:bg-blue-600 transition-all hover:scale-110 hover:text-white "
+            >
               Login
             </NavLink>
             <h1 className="my-auto mx-1">/</h1>
@@ -104,8 +110,11 @@ const handleProfile=()=>{
             </NavLink>
           </div>
 
-          <NavLink onClick={handleProfile} className="my-auto font-light text-3xl">
-            <  CiUser />
+          <NavLink
+            to={`/profile/${userId}`}
+            className="my-auto font-light text-3xl"
+          >
+            <CiUser />
           </NavLink>
         </div>
       </div>
