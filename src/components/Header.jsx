@@ -16,7 +16,7 @@ console.log(location.state?.userId)
       setUserId(location.state?.userId);
       console.log(userId);
     }
-  }, []);
+  });
 
   return (
     <>
