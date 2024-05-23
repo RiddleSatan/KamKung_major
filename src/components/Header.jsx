@@ -87,7 +87,7 @@ console.log(id)
           <NavLink className="my-auto font-bold text-3xl" to="">
             <CiSearch />
           </NavLink>
-          <NavLink className="my-auto font-light text-3xl" to="">
+          <NavLink to='cart' className="my-auto font-light text-3xl" >
             <CiShoppingCart />
           </NavLink>
           

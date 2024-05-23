@@ -3,6 +3,10 @@ import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { api } from "./config/axios.config";
+import { useDispatch } from "react-redux";
+import { addInfo } from "../features/slice";
+
+
 
 const SignUp = () => {
 
@@ -11,6 +15,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
+  const dispatch=useDispatch()
 
   const notify = (e) => {
     if (e) {
@@ -38,7 +43,12 @@ const SignUp = () => {
       setUsername("");
       // console.log(response.data.login)
       notify(response.data.noti);
-      navigate(`/profile/${response.data.id}`)
+      const userId=response.data.id
+      const userEmail=response.data.email
+      // console.log(userId)
+      // console.log(userEmail)
+      dispatch(addInfo({userId,userEmail}))
+      navigate(`/`)
       
     } catch (error) {
       console.error("Something went wrong", error);
