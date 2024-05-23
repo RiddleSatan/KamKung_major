@@ -11,10 +11,10 @@ const userDataTracking=createSlice({
     initialState,
     reducers:{
         addInfo:(state,action)=>{
-            state.userId=action.payload
-            state.email=action.email
+            state.userId=action.payload.userId
+            state.email=action.payload.email
         },
-        removeInfo:(state,action)=>{
+        removeInfo:(state)=>{
             state.userId=''
             state.email=''
         }

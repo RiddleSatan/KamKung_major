@@ -1,23 +1,20 @@
 import React, { useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { useState } from "react";
-
 import { CiUser } from "react-icons/ci";
+import { useSelector } from "react-redux";
+
 
 const Header = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
   const [userId, setUserId] = useState(null);
-console.log(location.state?.userId)
-  useEffect(() => {
-    if (location.state?.userId) {
-      setUserId(location.state?.userId);
-      console.log(userId);
-    }
-  });
+const id=useSelector(state=>state.userId)
 
+ 
+console.log(id)
   return (
     <>
       <div className="w-full h-20 flex justify-between pl-8 ">
@@ -93,7 +90,14 @@ console.log(location.state?.userId)
           <NavLink className="my-auto font-light text-3xl" to="">
             <CiShoppingCart />
           </NavLink>
-          <div className="my-auto flex">
+          
+
+          {id?<NavLink
+            to={`/profile/${id}`}
+            className="my-auto font-light text-3xl"
+          >
+            <CiUser />
+          </NavLink>:<div className="my-auto flex">
             <NavLink
               to="Login"
               className="px-2   rounded-[20px] text-black  hover:bg-blue-600 transition-all hover:scale-110 hover:text-white "
@@ -107,14 +111,9 @@ console.log(location.state?.userId)
             >
               Sign-Up
             </NavLink>
-          </div>
+          </div>}
 
-          <NavLink
-            to={`/profile/${userId}`}
-            className="my-auto font-light text-3xl"
-          >
-            <CiUser />
-          </NavLink>
+          
         </div>
       </div>
     </>

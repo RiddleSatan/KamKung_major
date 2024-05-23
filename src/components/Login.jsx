@@ -2,22 +2,26 @@ import React from "react";
 import { NavLink,useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "./config/axios.config";
+import { useSelector,useDispatch } from "react-redux";
+import { addInfo } from "../features/slice";
 
 const Login = () => {
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const navigate=useNavigate()
 
-
+const dispatch=useDispatch()
 
 async function handleSubmit(e){
 	e.preventDefault()
     try {
 		const response = await api.post('/login', { email, password });
-		console.log(response.data.id)
-		if(response.data.id){
-			navigate('/',{state:{userId:response.data.id}})
-			
+		const userId=response.data.id
+		if(response.status==200){
+			console.log(userId,email)
+            dispatch(addInfo({userId,email}))
+			navigate('/')
+			console.log(response.status)
 		}
 	} catch (error) {
 		console.log(error)
