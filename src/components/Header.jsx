@@ -42,7 +42,7 @@ console.log(id)
           </NavLink>
           <NavLink
             className="px-4 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
-            to="HomeApplience"
+            to="homeappliance"
           >
             HomeApplience
           </NavLink>

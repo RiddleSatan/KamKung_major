@@ -18,9 +18,8 @@ import Cart from "./components/Cart.jsx";
 import HandlingData from "./components/HandlingData.jsx";
 import { Provider, useSelector } from "react-redux";
 import { store } from "./app/store.js";
-import ProtectedRoutes from "./components/ProtectedRoutes/IsLoggedIn.jsx";
-
-// const id = useSelector((state) => state.userId);
+import PrivateRoute from "./components/ProtectedRoutes/PrivateRoute.jsx";
+import GuestRoute from "./components/ProtectedRoutes/GuestRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +43,7 @@ const router = createBrowserRouter([
         element: <Tv />,
       },
       {
-        path: "HomeApplience",
+        path: "homeappliance",
         element: <HomeApplience />,
       },
       {
@@ -60,46 +59,109 @@ const router = createBrowserRouter([
         element: <Accessories />,
       },
       {
-        path: "display",
-        element: <Display />,
+        
+        element: <GuestRoute />,
+        children: [
+          { path: "login", element: <Login /> },
+          { path: "signup", element: <SignUp /> },
+        ],
       },
       {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "signup",
-        element: (
-          <ProtectedRoutes>
-            <SignUp />,
-          </ProtectedRoutes>
-        ),
-      },
-      {
-        path: "profile/:id",
-        element: (
-          <ProtectedRoutes>
-            <Profile />,
-          </ProtectedRoutes>
-        ),
-      },
-      {
-        path: "cart",
-        element: (
-          <ProtectedRoutes>
-            <Cart />,
-          </ProtectedRoutes>
-        ),
+        
+        element: <PrivateRoute />,
+        children: [
+          {
+            path: "profile/:id",
+            element: <Profile />,
+          },
+          {
+            path: "cart",
+            element: <Cart />,
+          },
+        ],
       },
     ],
   },
 ]);
 
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Layout />,
+//     children: [
+//       {
+//         path: "",
+//         element: <Home />,
+//       },
+//       {
+//         path: "shop",
+//         element: <Shop />,
+//       },
+//       {
+//         path: "mobile",
+//         element: <Mobile />,
+//       },
+//       {
+//         path: "tv",
+//         element: <Tv />,
+//       },
+//       {
+//         path: "homeappliance",
+//         element: <HomeApplience />,
+//       },
+//       {
+//         path: "computing",
+//         element: <Computing />,
+//       },
+//       {
+//         path: "display",
+//         element: <Display />,
+//       },
+//       {
+//         path: "accessories",
+//         element: <Accessories />,
+//       },
+//       {
+//         path: "login",
+//         element: (
+//           <GuestRoute>
+//             <Login />
+//           </GuestRoute>
+//         ),
+//       },
+//       {
+//         path: "signup",
+//         element: (
+//           <GuestRoute>
+//             <SignUp />
+//           </GuestRoute>
+//         ),
+//       },
+//       {
+//         path: "profile/:id",
+//         element: (
+//           <PrivateRoute>
+//             <Profile />
+//           </PrivateRoute>
+//         ),
+//       },
+//       {
+//         path: "cart",
+//         element: (
+//           <PrivateRoute>
+//             <Cart />
+//           </PrivateRoute>
+//         ),
+//       },
+//     ],
+//   },
+// ]);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
-      {/* <HandlingData/> */}
+      {/* <HandlingData /> */}
     </Provider>
   </React.StrictMode>
 );
