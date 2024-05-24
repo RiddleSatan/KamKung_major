@@ -11,6 +11,7 @@ const [password, setPassword] = useState('')
 const navigate=useNavigate()
 
 const dispatch=useDispatch()
+const id=useSelector(state=>state.userId)
 
 async function handleSubmit(e){
 	e.preventDefault()

@@ -16,8 +16,11 @@ import Login from "./components/Login.jsx";
 import Profile from "./components/Profile.jsx";
 import Cart from "./components/Cart.jsx";
 import HandlingData from "./components/HandlingData.jsx";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { store } from "./app/store.js";
+import ProtectedRoutes from "./components/ProtectedRoutes/IsLoggedIn.jsx";
+
+// const id = useSelector((state) => state.userId);
 
 const router = createBrowserRouter([
   {
@@ -66,27 +69,37 @@ const router = createBrowserRouter([
       },
       {
         path: "signup",
-        element: <SignUp />,
+        element: (
+          <ProtectedRoutes>
+            <SignUp />,
+          </ProtectedRoutes>
+        ),
       },
       {
-        path:"profile/:id",
-        element:<Profile/>
+        path: "profile/:id",
+        element: (
+          <ProtectedRoutes>
+            <Profile />,
+          </ProtectedRoutes>
+        ),
       },
       {
-        path:"cart",
-        element:<Cart/>
-      }
+        path: "cart",
+        element: (
+          <ProtectedRoutes>
+            <Cart />,
+          </ProtectedRoutes>
+        ),
+      },
     ],
   },
 ]);
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-
-    <RouterProvider router={router} />
-    {/* <HandlingData/> */}
+      <RouterProvider router={router} />
+      {/* <HandlingData/> */}
     </Provider>
   </React.StrictMode>
 );
