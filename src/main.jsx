@@ -59,15 +59,15 @@ const router = createBrowserRouter([
         element: <Accessories />,
       },
       {
-        
-        element: <GuestRoute />,
+        path:'',
+        element: <GuestRoute />,//jab component ko wrap karunga GuestRoute se then only i can user children as prop inside GuestRoute but in this case there is no wrapping therefore we have to use outlet
         children: [
           { path: "login", element: <Login /> },
           { path: "signup", element: <SignUp /> },
         ],
       },
       {
-        
+        path:'',
         element: <PrivateRoute />,
         children: [
           {
@@ -84,78 +84,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Layout />,
-//     children: [
-//       {
-//         path: "",
-//         element: <Home />,
-//       },
-//       {
-//         path: "shop",
-//         element: <Shop />,
-//       },
-//       {
-//         path: "mobile",
-//         element: <Mobile />,
-//       },
-//       {
-//         path: "tv",
-//         element: <Tv />,
-//       },
-//       {
-//         path: "homeappliance",
-//         element: <HomeApplience />,
-//       },
-//       {
-//         path: "computing",
-//         element: <Computing />,
-//       },
-//       {
-//         path: "display",
-//         element: <Display />,
-//       },
-//       {
-//         path: "accessories",
-//         element: <Accessories />,
-//       },
-//       {
-//         path: "login",
-//         element: (
-//           <GuestRoute>
-//             <Login />
-//           </GuestRoute>
-//         ),
-//       },
-//       {
-//         path: "signup",
-//         element: (
-//           <GuestRoute>
-//             <SignUp />
-//           </GuestRoute>
-//         ),
-//       },
-//       {
-//         path: "profile/:id",
-//         element: (
-//           <PrivateRoute>
-//             <Profile />
-//           </PrivateRoute>
-//         ),
-//       },
-//       {
-//         path: "cart",
-//         element: (
-//           <PrivateRoute>
-//             <Cart />
-//           </PrivateRoute>
-//         ),
-//       },
-//     ],
-//   },
-// ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

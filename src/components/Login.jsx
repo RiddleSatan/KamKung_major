@@ -18,6 +18,7 @@ async function handleSubmit(e){
     try {
 		const response = await api.post('/login', { email, password });
 		const userId=response.data.id
+		console.log(userId)
 		if(response.status==200){
 			console.log(userId,email)
             dispatch(addInfo({userId,email}))

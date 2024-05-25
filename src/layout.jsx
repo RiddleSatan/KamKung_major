@@ -7,6 +7,21 @@ import SignUp from "./components/SignUp";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
+import { api } from "./components/config/axios.config";
+
+
+async function sendCookies(){
+  try {
+    const response=await api.get('/getCookie')
+    if (response.status==200){
+      console.log('cookies had been successfully end to the server')
+    }else{
+      console.log('something is wrong')
+    }
+  } catch (error) {
+    console.log('some error while sending the cookies',error)
+  }
+}
 
 function Layout() {
   const [data, setData] = useState([]);
@@ -22,8 +37,11 @@ function Layout() {
       });
   }
 
+
+
   useEffect(() => {
     fetchData();
+    sendCookies();
   }, []);
 
   return (

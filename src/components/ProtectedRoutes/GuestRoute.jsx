@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
-const GuestRoute = ({ children }) => {
+const GuestRoute = () => {
   const userId = useSelector((state) => state.userId);
 
   if (userId) {
@@ -10,7 +10,7 @@ const GuestRoute = ({ children }) => {
   }
 else{
 
-  return children;
+  return <Outlet/>;
 }
 };
 
