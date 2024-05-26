@@ -4,11 +4,17 @@ import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { useState } from "react";
 import { CiUser } from "react-icons/ci";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+
+
 
 
 const Header = () => {
-  // const location = useLocation();
+
+
+
+  
 
   const [userId, setUserId] = useState(null);
 const id=useSelector(state=>state.userId)

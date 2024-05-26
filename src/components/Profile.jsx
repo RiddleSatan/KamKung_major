@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import { api } from "./config/axios.config";
 import { useDispatch } from "react-redux";
 import { removeInfo } from "../features/slice";
 
@@ -9,12 +9,10 @@ const Profile = () => {
   const [data, setData] = useState("");
   const { id } = useParams();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const fetchdata = async () => {
     try {
-      axios
-        .get(`http://localhost:3000/profile/${id}`)
+    await  api.get(`/profile/${id}`)
         .then((res) => setData(res.data));
     } catch (error) {
       console.log(error);
@@ -25,9 +23,16 @@ const Profile = () => {
     fetchdata();
   }, []);
 
-  const handleLogout = () => {
-    dispatch(removeInfo());
-    navigate("/");
+  const handleLogout = async () => {
+    
+   try {
+    const res =  await api.post("/logout");
+    if (res) {
+      dispatch(removeInfo())
+    }
+   } catch (error) {
+    
+   }
   };
 
   return (

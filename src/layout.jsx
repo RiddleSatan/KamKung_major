@@ -8,23 +8,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { api } from "./components/config/axios.config";
+import { addInfo } from "./features/slice";
+import { useDispatch } from "react-redux";
 
 
-async function sendCookies(){
-  try {
-    const response=await api.get('/getCookie')
-    if (response.status==200){
-      console.log('cookies had been successfully end to the server')
-    }else{
-      console.log('something is wrong')
-    }
-  } catch (error) {
-    console.log('some error while sending the cookies',error)
-  }
-}
+
+
 
 function Layout() {
   const [data, setData] = useState([]);
+  const dispatch = useDispatch();
   function fetchData() {
     axios
       .get("http://localhost:3000/data")
@@ -37,11 +30,18 @@ function Layout() {
       });
   }
 
-
+  const loginCheck = async () => {
+    
+    const user = await api.get("/getCurrentUser", { withCredentials: true });
+    const id = user.data._id;
+    const email = user.data.email;
+    dispatch(addInfo({ userId: id, email }));
+  
+  };
 
   useEffect(() => {
     fetchData();
-    sendCookies();
+    loginCheck();
   }, []);
 
   return (
