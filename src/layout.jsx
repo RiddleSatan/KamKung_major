@@ -11,10 +11,6 @@ import { api } from "./components/config/axios.config";
 import { addInfo } from "./features/slice";
 import { useDispatch } from "react-redux";
 
-
-
-
-
 function Layout() {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
@@ -31,12 +27,10 @@ function Layout() {
   }
 
   const loginCheck = async () => {
-    
     const user = await api.get("/getCurrentUser", { withCredentials: true });
     const id = user.data._id;
     const email = user.data.email;
     dispatch(addInfo({ userId: id, email }));
-  
   };
 
   useEffect(() => {

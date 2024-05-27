@@ -15,8 +15,7 @@ import SignUp from "./components/SignUp.jsx";
 import Login from "./components/Login.jsx";
 import Profile from "./components/Profile.jsx";
 import Cart from "./components/Cart.jsx";
-import HandlingData from "./components/HandlingData.jsx";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import { store } from "./app/store.js";
 import PrivateRoute from "./components/ProtectedRoutes/PrivateRoute.jsx";
 import GuestRoute from "./components/ProtectedRoutes/GuestRoute.jsx";
@@ -60,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path:'',
-        element: <GuestRoute />,//jab component ko wrap karunga GuestRoute se then only i can user children as prop inside GuestRoute but in this case there is no wrapping therefore we have to use outlet
+        element: <GuestRoute />,//jab component ko wrap karunga GuestRoute se then only i can use children as prop inside GuestRoute but in this case there is no wrapping therefore we have to use outlet to render the component
         children: [
           { path: "login", element: <Login /> },
           { path: "signup", element: <SignUp /> },

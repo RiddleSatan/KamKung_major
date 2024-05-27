@@ -6,21 +6,11 @@ import { useState } from "react";
 import { CiUser } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 
-
-
-
-
 const Header = () => {
-
-
-
-  
-
   const [userId, setUserId] = useState(null);
-const id=useSelector(state=>state.userId)
+  const id = useSelector((state) => state.userId);
 
- 
-console.log(id)
+  console.log(id);
   return (
     <>
       <div className="w-[95vw] mx-auto h-16 flex justify-between pl-5 mt-5 rounded-3xl bg-black text-white ">
@@ -93,33 +83,34 @@ console.log(id)
           <NavLink className="my-auto font-bold text-3xl" to="">
             <CiSearch />
           </NavLink>
-          <NavLink to='cart' className="my-auto font-light text-3xl" >
+          <NavLink to="cart" className="my-auto font-light text-3xl">
             <CiShoppingCart />
           </NavLink>
-          
 
-          {id?<NavLink
-            to={`/profile/${id}`}
-            className="my-auto font-light text-3xl"
-          >
-            <CiUser />
-          </NavLink>:<div className="my-auto flex">
+          {id ? (
             <NavLink
-              to="login"
-              className="px-2   rounded-[20px] text-white  hover:bg-blue-600 transition-all hover:scale-110 hover:text-black "
+              to={`/profile/${id}`}
+              className="my-auto font-light text-3xl"
             >
-              Login
+              <CiUser />
             </NavLink>
-            <h1 className="my-auto mx-1">/</h1>
-            <NavLink
-              to="Signup"
-              className="px-2   rounded-[20px] text-white  hover:bg-black transition-all hover:scale-110 hover:text-black "
-            >
-              Sign-Up
-            </NavLink>
-          </div>}
-
-          
+          ) : (
+            <div className="my-auto flex">
+              <NavLink
+                to="login"
+                className="px-2   rounded-[20px] text-white  hover:bg-blue-600 transition-all hover:scale-110 hover:text-black "
+              >
+                Login
+              </NavLink>
+              <h1 className="my-auto mx-1">/</h1>
+              <NavLink
+                to="Signup"
+                className="px-2   rounded-[20px] text-white  hover:bg-black transition-all hover:scale-110 hover:text-black "
+              >
+                Sign-Up
+              </NavLink>
+            </div>
+          )}
         </div>
       </div>
     </>
