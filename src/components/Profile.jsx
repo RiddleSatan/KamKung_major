@@ -56,7 +56,7 @@ const Profile = () => {
               <button className="px-5 py-2">Order Status</button>
               <button className="px-5 py-2">Cart</button>
             </div>
-            <button className="px-5 py-2 border-l-[1px]  border-gray-400  bg-zinc-100">Logout</button>
+            <button onClick={handleLogout} className="px-5 py-2 border-l-[1px]  border-gray-400  bg-zinc-100">Logout</button>
           </div>
           <div className="w-[85vw]  mt-3 rounded-sm h-[20vh]  flex flex-col items-center border-[1px] border-gray-400">
             <h1>{data.email}</h1>
