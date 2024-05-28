@@ -13,7 +13,7 @@ const Header = () => {
   console.log(id);
   return (
     <>
-      <div className="w-[95vw] mx-auto h-16 flex justify-between pl-5 mt-5 rounded-3xl bg-black text-white ">
+      <div className="w-[95vw] mx-auto h-16  flex justify-between pl-5 mt-5 rounded-3xl bg-black text-white ">
         <div className="overflow-hidden w-28  ml-16">
           <NavLink to="">
             <img
