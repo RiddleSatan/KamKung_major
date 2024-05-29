@@ -1,6 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { api } from "./config/axios.config";
 import { FaCartPlus } from "react-icons/fa6";
+import { useSelector } from "react-redux";
+
 const card = ({ val }) => {
+   const [data, setData] = useState({name:'',description:'',price:'',category:'',image:''})
+   const id=useSelector(state=>state.userId)
+   const handlecart = (val) => {
+    setData((prevState) => ({
+      ...prevState,
+      name: val.title,
+      description: val.description,
+      price: val.price,
+      category: val.category,
+      image: val.image,
+    }));
+  };
+
+  useEffect(()=>{
+if (data.name){
+  sendToCart()
+}
+  })
+   
+ 
+
+  const sendToCart=async ()=>{
+    const response=await api.post('/addToCart',{data,id})
+    if (response.status==200){
+      console.log('added to cart')
+    }else{
+      console.error('Something went very wrong :/')
+    }
+  }
+   
+  
+
+
+
+
   return (
     <>
       <div className="w-60 border-[1px]   min-h-[32rem] max-h-[32rem] bg-[#f4f4f4] rounded-md p-2 flex flex-col justify-between">
@@ -25,7 +63,7 @@ const card = ({ val }) => {
             <button className="px-10 rounded-[2.5vh] py-[.7vh] mx-auto mt-4 mb-2 block text-white bg-black">
               Buy now
             </button>
-            <button className="px-5 text-2xl rounded-[2.5vh] py-[.7vh] mx-auto mt-4 mb-2 block text-white bg-black  hover:bg-zinc-600">
+            <button onClick={(e)=>handlecart(val)} className="px-5 text-2xl rounded-[2.5vh] py-[.7vh] mx-auto mt-4 mb-2 block text-white bg-black  hover:bg-zinc-600">
               <FaCartPlus />
             </button>
           </div>

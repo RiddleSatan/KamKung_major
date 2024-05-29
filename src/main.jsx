@@ -19,6 +19,7 @@ import { Provider } from "react-redux";
 import { store } from "./app/store.js";
 import PrivateRoute from "./components/ProtectedRoutes/PrivateRoute.jsx";
 import GuestRoute from "./components/ProtectedRoutes/GuestRoute.jsx";
+import HandlingData from "./components/HandlingData.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Home />,
+        element: <HandlingData />,
       },
       {
         path: "shop",
