@@ -3,6 +3,7 @@ import { IoIosRemoveCircle } from "react-icons/io";
 
 
 const Cart = () => {
+  
   return (
     <>
       <div className="w-full min-h-screen bg-[#ecebeb] p-8  ">

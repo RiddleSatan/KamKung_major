@@ -2,7 +2,8 @@ import { createSlice,nanoid } from "@reduxjs/toolkit";
 
 const initialState={
     userId:'',
-    email:''
+    email:'',
+    cartId:''
 }
 
 
@@ -13,10 +14,12 @@ const userDataTracking=createSlice({
         addInfo:(state,action)=>{
             state.userId=action.payload.userId
             state.email=action.payload.email
+            state.cartId=action.payload.cartId
         },
         removeInfo:(state)=>{
             state.userId=''
             state.email=''
+            state.cartId=''
         }
     }
 })
