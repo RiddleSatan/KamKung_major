@@ -32,7 +32,7 @@ const card = ({ val }) => {
   });
 
   const sendToCart = async () => {
-    const response = await api.post("/addToCart", { data, id });
+    const response = await api.post("/addToCart", { data, id }); 
     if (response.status == 200) {
       // dispatch(addInfo({ cartId: response.data }));
       console.log("added to cart");
