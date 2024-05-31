@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { IoIosRemoveCircle } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { api } from "./config/axios.config";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const userId = useSelector((state) => state.userId);
   const [cartData, setCartData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const id = useSelector((state) => state.userId);
 
   const getCart = async () => {
@@ -16,6 +18,8 @@ const Cart = () => {
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -30,8 +34,9 @@ const Cart = () => {
     getCart();
     console.log("run");
     if (response.status == 200) {
+      toast.success(`${val.name} has remove successfully from the cart`)
       console.log("product remove successfully from the cart");
-      getCart(); 
+      getCart();
     } else {
       console.log("something went wrong");
     }
@@ -48,7 +53,15 @@ const Cart = () => {
           <div className="border-b-[1px] border-zinc-300 pb-3 mb-4">
             <h1 className="text-xl font-medium">Cart</h1>
           </div>
-          {cartData? (
+          {loading ? (
+           <div class="flex justify-center items-center h-screen">
+           <div class="relative inline-flex">
+               <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
+               <div class="w-8 h-8 bg-blue-500 rounded-full absolute top-0 left-0 animate-ping"></div>
+               <div class="w-8 h-8 bg-blue-500 rounded-full absolute top-0 left-0 animate-pulse"></div>
+           </div>
+       </div>
+          ) : cartData.length > 0 ? (
             cartData.map((val, index) => (
               <div
                 key={index}
@@ -84,7 +97,7 @@ const Cart = () => {
                       </button> */}
                     </div>
                     <span className="price text-red-600 font-medium ml-4">
-                      {val.price}
+                      $ {val.price}
                     </span>
                   </div>
                   <div className="actions flex items-center justify-between mt-2">
@@ -107,7 +120,7 @@ const Cart = () => {
               </div>
             ))
           ) : (
-            <h1>Loading...</h1>
+            <h1>no product in the cart</h1>
           )}
         </div>
 
@@ -117,13 +130,13 @@ const Cart = () => {
             <h1 className="px-2 py-1 rounded-md bg-white tracking-tighter text-sm">
               Free
             </h1>
-            <h1 className="m-auto text-[#898787]">Express:$4.99</h1>
+            <h1 className="text-[#898787]">Express:$4.99</h1>
           </div>
           <div className="w-full h-auto bg-white mt-4 border-t-[1px] border-b-[1px] border-zinc-300 py-4">
             <div className="flex">
               <input
                 type="text"
-                className="px-2 py-1 border-2 rounded-s-lg w-48"
+                className="px-2 py-1 border-2 rounded-s-lg w-full"
                 placeholder="Promocode"
               />
               <button className="px-2 py-1 border-2 border-l-0 rounded-r-lg">
@@ -162,27 +175,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-// <div className=" products rounded-2xl flex bg-zinc-300 ">
-//               <div className="w-[5rem] rounded-2xl h-[5.7rem] mr-[0.65rem] overflow-hidden">
-//                 <img
-//                   className="w-full h-full object-cover"
-//                   src="https://5.imimg.com/data5/NO/LX/SA/SELLER-21936794/men-plain-t-shirt-500x500.jpg"
-//                   alt=""
-//                 />
-//               </div>
-//               <div>
-//                 <h1>Relaxed Fit T-shirt</h1>
-//                 <h1 className="text-sm text-zinc-600">12 avilable</h1>
-//                 <div className="flex  mt-4 gap-2">
-//                   <h1>color: Black</h1>
-//                   <h1>quantity</h1>
-//                 </div>
-//               </div>
-//               <div className="mx-auto flex flex-col justify-between ml-16">
-//                 <h1 className="mx-auto">$12.99</h1>
-//                 <button className="text-2xl mx-auto mb-1  text-red-600 rounded-md font-light hover:bg-white hover:text-red-800 transition-all">
-//                   <IoIosRemoveCircle />
-//                 </button>
-//               </div>
-//             </div>

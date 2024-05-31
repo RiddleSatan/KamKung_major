@@ -3,6 +3,7 @@ import { api } from "./config/axios.config";
 import { FaCartPlus } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { addInfo } from "../features/slice";
+import { toast } from "react-toastify";
 
 const card = ({ val }) => {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ const card = ({ val }) => {
     const response = await api.post("/addToCart", { data, id }); 
     if (response.status == 200) {
       // dispatch(addInfo({ cartId: response.data }));
+      toast.success(`${data.name} has been added to cart`);
       console.log("added to cart");
     } else {
       console.error("Something went very wrong :/");

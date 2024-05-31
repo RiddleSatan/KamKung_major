@@ -4,7 +4,7 @@ import Card from "./Card.jsx";
 import useFetchData from "./Hooks/useFetchData.js";
 
 const HandlingData = () => {
-    
+
   const { data, loading, error } = useFetchData(
     `https://fakestoreapi.com/products`
   );

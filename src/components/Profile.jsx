@@ -36,7 +36,7 @@ const Profile = () => {
     <>
     {
       data?(
-<div className="h-[70vh] w-full">
+<div className="h-[70vh] w-full mt-2">
         <div className="w-full h-[30vh] bg-[url('https://i.etsystatic.com/23313855/r/il/35e515/4126515671/il_570xN.4126515671_8o70.jpg')] flex justify-center relative items-end">
           <div className="rounded-[50%] w-[20vh] h-[20vh] absolute border-4 border-white overflow-hidden translate-y-[50%]">
             <img className="w-full h-full object-cover" src="https://i1.sndcdn.com/artworks-NlzGmmivqAl2XNJM-OQU0bw-t500x500.jpg" alt="" />
@@ -66,7 +66,13 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      ):<h1>Loading...</h1>
+      ):<div class="flex justify-center items-center h-screen">
+      <div class="relative inline-flex">
+          <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
+          <div class="w-8 h-8 bg-blue-500 rounded-full absolute top-0 left-0 animate-ping"></div>
+          <div class="w-8 h-8 bg-blue-500 rounded-full absolute top-0 left-0 animate-pulse"></div>
+      </div>
+  </div>
       
     }
       
