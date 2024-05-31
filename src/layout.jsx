@@ -11,12 +11,13 @@ import { api } from "./components/config/axios.config";
 import { addInfo } from "./features/slice";
 import { useDispatch } from "react-redux";
 
+
 function Layout() {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
   function fetchData() {
-    axios
-      .get("http://localhost:3000/data")
+    api
+      .get("/data")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
