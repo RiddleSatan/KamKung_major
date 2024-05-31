@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL,
+  baseURL: `${import.meta.env.VITE_BACKEND_URL}`,
   withCredentials: true, //indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers
   headers: {
     //This defines default HTTP headers that will be sent with every request made using this Axios instance.
