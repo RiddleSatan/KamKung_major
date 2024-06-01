@@ -42,15 +42,18 @@ const SignUp = () => {
       setFullname("");
       setUsername("");
       // console.log(response.data.login)
-      notify(response.data.noti);
-      const userId=response.data.id
+      toast(response.data.noti);
+      if(response.status==200){
+        const userId=response.data.id
       const userEmail=response.data.email
       // console.log(userId)
       // console.log(userEmail)
       dispatch(addInfo({userId,userEmail}))
       navigate(`/`)
+      }
       
     } catch (error) {
+      toast.error(error.response.data.noti);
       console.error("Something went wrong", error);
       throw error;
     }
