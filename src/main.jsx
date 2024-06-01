@@ -7,7 +7,7 @@ import Home from "./components/Home.jsx";
 import Accessories from "./components/Accessories.jsx";
 import Computing from "./components/Computing.jsx";
 import Mobile from "./components/Mobile.jsx";
-import HomeApplience from "./components/HomeApplience.jsx";
+
 import Shop from "./components/Shop.jsx";
 import Tv from "./components/Tv.jsx";
 import Display from "./components/Display.jsx";
@@ -20,6 +20,7 @@ import { store } from "./app/store.js";
 import PrivateRoute from "./components/ProtectedRoutes/PrivateRoute.jsx";
 import GuestRoute from "./components/ProtectedRoutes/GuestRoute.jsx";
 import HandlingData from "./components/HandlingData.jsx";
+import AboutUs from "./components/AboutUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,8 +44,8 @@ const router = createBrowserRouter([
         element: <Tv />,
       },
       {
-        path: "homeappliance",
-        element: <HomeApplience />,
+        path: "aboutUs",
+        element: <AboutUs />,
       },
       {
         path: "computing",

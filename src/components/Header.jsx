@@ -23,26 +23,38 @@ const Header = () => {
             />
           </NavLink>
         </div>
-        <div className="flex items-center ml-8  ">
+        <div className="flex items-center justify-center ml-10  ">
+        <NavLink to=""
+            className="px-4 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
+            
+          >
+            Home
+          </NavLink>
           <NavLink
             className="px-4 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
             to="Computing"
           >
-            Computing
+            Services
           </NavLink>
           <NavLink
             className="px-4 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
             to="Shop"
           >
-            Shop
+            Contact Us
           </NavLink>
           <NavLink
             className="px-4 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
-            to="homeappliance"
+            to="aboutUs"
           >
-            HomeApplience
+            About Us
           </NavLink>
           <NavLink
+            className="px-2 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
+            to="Accessories"
+          >
+            For Business
+          </NavLink>
+          {/* <NavLink
             className="px-4 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
             to="Mobile"
           >
@@ -65,7 +77,7 @@ const Header = () => {
             to="Accessories"
           >
             Accessories
-          </NavLink>
+          </NavLink> */}
         </div>
         <div className="w-fit flex gap-3 my-auto mr-16">
           {/* <NavLink
@@ -74,12 +86,7 @@ const Header = () => {
           >
             Support
           </NavLink> */}
-          <NavLink
-            className="px-2 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
-            to="Accessories"
-          >
-            For Business
-          </NavLink>
+          
           <NavLink className="my-auto font-bold text-3xl" to="">
             <CiSearch />
           </NavLink>
