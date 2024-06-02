@@ -45,7 +45,7 @@ const Profile = () => {
         <div className=" w-full bg-white  translate-y-[4.5rem] flex flex-col items-center justify-center ">
           <div className="flex flex-col justify-center  ">
             <h1 className="mx-auto mt-4 text-blue-500">@{data.username}</h1>
-            <h1 className="text-2xl">{data.fullname}</h1>
+            <h1 className="text-2xl mx-auto">{data.fullname}</h1>
             <h1>Gamer & Software Engineer</h1>
             <button className=" mt-2 w-fit mx-auto px-2 rounded-sm flex items-center gap-1 hover:text-blue-500">Edit Profile <MdEdit /></button>
           </div>
