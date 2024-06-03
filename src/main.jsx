@@ -7,8 +7,6 @@ import Home from "./components/Home.jsx";
 import Accessories from "./components/Accessories.jsx";
 import Computing from "./components/Computing.jsx";
 import Mobile from "./components/Mobile.jsx";
-
-import Shop from "./components/Shop.jsx";
 import Tv from "./components/Tv.jsx";
 import Display from "./components/Display.jsx";
 import SignUp from "./components/SignUp.jsx";
@@ -21,6 +19,8 @@ import PrivateRoute from "./components/ProtectedRoutes/PrivateRoute.jsx";
 import GuestRoute from "./components/ProtectedRoutes/GuestRoute.jsx";
 import HandlingData from "./components/HandlingData.jsx";
 import AboutUs from "./components/AboutUs.jsx";
+import ContactUs from "./components/ContactUs.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -32,8 +32,8 @@ const router = createBrowserRouter([
         element: <HandlingData />,
       },
       {
-        path: "shop",
-        element: <Shop />,
+        path: "contactUs",
+        element: <ContactUs />,
       },
       {
         path: "mobile",

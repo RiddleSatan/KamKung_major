@@ -38,7 +38,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className="px-4 py-2 rounded-[20px] text-white  hover:bg-white transition-all hover:scale-110 hover:text-black "
-            to="Shop"
+            to="contactUs"
           >
             Contact Us
           </NavLink>
