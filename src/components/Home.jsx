@@ -1,10 +1,27 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+
 
 const Home = () => {
   return (
     <div className="w-full min-h-screen  px-2">
-      <div className="w-[95%] h-[98vh] px-4 flex items-center">
+      <div className="w-[95%] h-[98vh] px-4 flex items-center ">
         <div className="title w-[40vw]    ml-12">
           <h1 className="text-6xl font-medium tracking-tighter">
             Experience a New Era of Samsung AI TV
@@ -153,6 +170,30 @@ const Home = () => {
            <img className="w-full h-full object-cover" src="" alt="" />
       </div>
       
+      <Accordion  type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+<div className="bg-zinc-600">
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Card Content</p>
+  </CardContent>
+  <CardFooter>
+    <p>Card Footer</p>
+  </CardFooter>
+</Card>
+
+</div>
 
     </div>
   );

@@ -28,6 +28,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
+        path: "home",
+        element: <Home />,
+      },
+      {
         path: "",
         element: <HandlingData />,
       },
