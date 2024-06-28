@@ -12,6 +12,7 @@ import axios from "axios";
 const Header = () => {
   
   const [search, setSearch] = useState([]);
+  const [error, setError] = useState('')
   const id = useSelector((state) => state.userId);
   const cancelTokenSource = axios.CancelToken.source();
   const handleChange = async (val) => {
