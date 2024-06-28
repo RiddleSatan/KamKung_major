@@ -32,9 +32,7 @@ const Header = () => {
         setError(error.message);
         console.error(error);
       }
-    } finally {
-      setSearch(data);
-    }
+    } 
   };
   useEffect(() => {
     // Create a new CancelTokenSource only when search changes
