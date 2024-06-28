@@ -10,7 +10,7 @@ import { api } from "./config/axios.config";
 import axios from "axios";
 
 const Header = () => {
-  const [userId, setUserId] = useState(null);
+  
   const [search, setSearch] = useState([]);
   const id = useSelector((state) => state.userId);
   const cancelTokenSource = axios.CancelToken.source();
