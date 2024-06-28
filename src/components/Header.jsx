@@ -131,8 +131,8 @@ const Header = () => {
             />
             {search && search.length > 0 ? (
               <div className=" bg-blue-100 text-black w-[15.5rem] rounded px-2 z-10">
-                {search.slice(0, 3).map((val) => (
-                  <h1 className="pl-1 ">{val.Title}</h1>
+                {search.slice(0, 3).map((item, index) => (
+                  <h1 className="pl-1 " key={index}>{item.Title}</h1>
                 ))}
               </div>
             ) : // {/* <h1  className="pl-1 ">{val.Title}</h1>
