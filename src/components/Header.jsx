@@ -128,7 +128,7 @@ const Header = () => {
               className="px-2 py-1 rounded-[6px] h-auto my-auto outline-none text-black"
               name="search"
               onChange={(e) => handleChange(e.target.value)}
-              placeholder="Search your product"
+              placeholder="Search your movies"
               type="text"
             />
             {search && search.length > 0 ? (
