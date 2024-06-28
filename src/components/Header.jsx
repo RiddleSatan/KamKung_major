@@ -14,12 +14,12 @@ const Header = () => {
   const [search, setSearch] = useState([]);
  
   const id = useSelector((state) => state.userId);
-  const cancelTokenSource = axios.CancelToken.source();
+  // const cancelTokenSource = axios.CancelToken.source();
   const handleChange = async (val) => {
     try {
       const { data, loading, error } = await axios.get(
         `https://www.omdbapi.com/?s=${val}&page=1&apikey=507669ab`,
-        { cancelToken: cancelTokenSource.current.token }
+        // { cancelToken: cancelTokenSource.current.token }
       );
       if (data.Search) {
         setSearch(data.Search);
@@ -27,24 +27,24 @@ const Header = () => {
         setSearch([]);
       }
     } catch (error) {
-      if (axios.isCancel(error)) {
+      // if (axios.isCancel(error)) {
         console.log("Request cancelled");
-      } else {
+      // } else {
         
-        console.error(error);
-      }
+      //   console.error(error);
+      // }
     } 
   };
-  useEffect(() => {
-    // Create a new CancelTokenSource only when search changes
-    const currentCancelTokenSource = axios.CancelToken.source();
-    cancelTokenSource.current = currentCancelTokenSource;
+  // useEffect(() => {
+  //   // Create a new CancelTokenSource only when search changes
+  //   const currentCancelTokenSource = axios.CancelToken.source();
+  //   cancelTokenSource.current = currentCancelTokenSource;
 
-    // Cleanup function to cancel pending requests on unmount
-    return () => {
-      currentCancelTokenSource.cancel("canceling the request on unmount");
-    };
-  }, [search]); // Ensure cancellation and re-creation on search changes
+  //   // Cleanup function to cancel pending requests on unmount
+  //   return () => {
+  //     currentCancelTokenSource.cancel("canceling the request on unmount");
+  //   };
+  // }, [search]); // Ensure cancellation and re-creation on search changes
 
   console.log(search);
   return (
