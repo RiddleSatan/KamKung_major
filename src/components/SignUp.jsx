@@ -42,7 +42,8 @@ const SignUp = () => {
       setFullname("");
       setUsername("");
       // console.log(response.data.login)
-      toast(response.data.noti);
+      // toast(response.data.noti);
+      notify()
       if(response.status==200){
         const userId=response.data.id
       const userEmail=response.data.email
