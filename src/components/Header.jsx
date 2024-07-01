@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
@@ -9,17 +9,24 @@ import useFetchData from "./Hooks/useFetchData";
 import { api } from "./config/axios.config";
 import axios from "axios";
 
+
 const Header = () => {
   
   const [search, setSearch] = useState([]);
  
   const id = useSelector((state) => state.userId);
+  const cancelTokenSource = useRef(null);
   // const cancelTokenSource = axios.CancelToken.source();
   const handleChange = async (val) => {
+    if (cancelTokenSource.current) {
+      cancelTokenSource.current.cancel("Canceling previous request");
+    }
+    // Create a new cancel token
+    cancelTokenSource.current = axios.CancelToken.source();
     try {
       const { data, loading, error } = await axios.get(
         `https://www.omdbapi.com/?s=${val}&page=1&apikey=507669ab`,
-        // { cancelToken: cancelTokenSource.current.token }
+        { cancelToken: cancelTokenSource.current.token }
       );
       if (data.Search) {
         setSearch(data.Search);
@@ -27,13 +34,12 @@ const Header = () => {
         setSearch([]);
       }
     } catch (error) {
-      // if (axios.isCancel(error)) {
+      if (axios.isCancel(error)) {
         console.log("Request cancelled");
-      // } else {
-        
-      //   console.error(error);
-      // }
-    } 
+      } else {
+        console.error(error);
+      }
+    }
   };
   // useEffect(() => {
   //   // Create a new CancelTokenSource only when search changes
@@ -45,6 +51,15 @@ const Header = () => {
   //     currentCancelTokenSource.cancel("canceling the request on unmount");
   //   };
   // }, [search]); // Ensure cancellation and re-creation on search changes
+
+
+  useEffect(() => {
+    return () => {
+      if (cancelTokenSource.current) {
+        cancelTokenSource.current.cancel("Canceling the request");
+      }
+    };
+  }, []);
 
   console.log(search);
   return (
@@ -131,9 +146,9 @@ const Header = () => {
               type="text"
             />
             {search && search.length > 0 ? (
-              <div className=" bg-blue-100 text-black w-[15.5rem] rounded px-2 z-10">
+              <div className=" bg-blue-100 py-[3px] text-black w-[15.5rem] rounded px-2 z-10">
                 {search.slice(0, 3).map((item, index) => (
-                  <h1 className="pl-1 " key={index}>{item.Title}</h1>
+                  <h1 className="pl-1 py-[1px] hover:bg-blue-400 hover:cursor-pointer" key={index}>{item.Title}</h1>
                 ))}
               </div>
             ) : // {/* <h1  className="pl-1 ">{val.Title}</h1>
